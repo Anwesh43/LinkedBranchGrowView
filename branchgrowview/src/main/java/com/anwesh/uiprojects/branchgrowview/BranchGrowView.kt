@@ -51,3 +51,19 @@ fun Canvas.drawBGNode(i : Int, scale : Float, paint : Paint) {
     drawBranchGrow(1f - 2 * (i % 2), gap, scale, paint)
     restore()
 }
+
+class BranchGrowView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
