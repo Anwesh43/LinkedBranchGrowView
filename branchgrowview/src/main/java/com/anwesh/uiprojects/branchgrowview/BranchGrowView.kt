@@ -179,4 +179,26 @@ class BranchGrowView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BranchGrowView) {
+
+        private val bg : BranchGrow = BranchGrow(0)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            bg.draw(canvas, paint)
+            animator.animate {
+                bg.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            bg.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
