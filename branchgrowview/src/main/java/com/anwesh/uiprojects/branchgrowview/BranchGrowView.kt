@@ -205,4 +205,13 @@ class BranchGrowView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BranchGrowView {
+            val view : BranchGrowView = BranchGrowView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
